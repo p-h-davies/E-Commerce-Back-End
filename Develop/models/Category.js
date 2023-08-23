@@ -10,12 +10,14 @@ Category.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      notNull: true,
+      allowNull: false,
+      onDelete: 'cascade'
 
     },
     category_name: {
       type: DataTypes.STRING,
-      notNull: true,
+      allowNull: false,
+      onDelete: 'cascade'
     }
   },
   {
@@ -24,7 +26,7 @@ Category.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'category',
-  }
+  },
 );
 
 module.exports = Category;

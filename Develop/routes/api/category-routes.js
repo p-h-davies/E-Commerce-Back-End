@@ -5,14 +5,16 @@ const { Category, Product } = require('../../models');
 
 // GET all categories
 router.get('/', (req, res) => {
-  Category.findAll().then((categoryData) => {
+  Category.findAll({
+    include: [Product]
+  }).then((categoryData) => {
     res.json(categoryData);
   });
 });
 
 //Find category by ID
 router.get('/:id', (req, res) => {
-  Category.findByPk(req.params.id).then((categoryData) => {
+  Category.findByPk(req.params.id, { include: [Product] }).then((categoryData) => {
     res.json(categoryData);
   });
 });
@@ -20,7 +22,7 @@ router.get('/:id', (req, res) => {
 //Create a category
 router.post('/', (req, res) => {
   Category.create({
-    category_name: req.body.category,
+    category_name: req.body.category_name
   })
     .then((newCategory) => {
       res.json(newCategory);
@@ -28,15 +30,13 @@ router.post('/', (req, res) => {
     .catch((err) => {
       res.json(err);
     });
-
 });
 
 //Update a category by ID
 router.put('/:id', (req, res) => {
   Category.update(
     {
-      id: req.body.id,
-      category_name: req.body.category,
+      category_name: req.body.category_name,
     },
     {
       where: {
@@ -60,6 +60,7 @@ router.delete('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
+    onDelete: 'cascade',
   })
     .then((deletedCategory) => {
       res.json(deletedCategory);
