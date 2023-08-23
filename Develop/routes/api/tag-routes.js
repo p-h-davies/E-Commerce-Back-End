@@ -3,24 +3,58 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
 
+// find all tags
 router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
+  Tag.findAll({
+    include: [Product]
+  }).then((categoryData) => {
+    res.json(categoryData);
+  });
 });
 
+// find a single tag by its `id`
 router.get('/:id', (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
+  Tag.findByPk(req.params.id, { include: [Product] }).then((data) => {
+    res.json(data);
+  });
 });
 
+// create a new tag
 router.post('/', (req, res) => {
-  // create a new tag
+  Tag.create({
+    tag_name: req.body.tag_name
+  })
+    .then((newCategory) => {
+      res.json(newCategory);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
+// update a tag's name by its `id` value
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
+  Tag.update(
+    {
+      tag_name: req.body.tag_name,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((updatedBook) => {
+      res.json(updatedBook);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+
 });
 
+// Delete a tag
 router.delete('/:id', (req, res) => {
   Tag.destroy({
     where: {
