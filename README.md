@@ -29,8 +29,17 @@ Before running the code, it is important to run 'npm i' in your terminal, to ens
 ## Usage:
 - Open the folder 'E-Commerce-Back-End/Develop' in your terminal, then type 'npm i' to ensure all packages are working on your machine.
 - Next, clone the .env.example file, renaming the file '.env' and fill out your server credentials.
-Type /npm run seed' into the terminal to set up the starter tables and database.
+- Add the database to MYSQL, then type 'npm run seed' into the terminal to set up the starter tables and database. (demonstrated in video below)
+
+https://github.com/p-h-davies/E-Commerce-Back-End/assets/132735727/0a64b808-3b79-4524-9994-6bb141512c2a
+
+
 - Then, type 'npm start' to launch the server.
+  
+
+https://github.com/p-h-davies/E-Commerce-Back-End/assets/132735727/e54e6180-a385-43f9-ad1a-d61146d351b8
+
+
 - Next, navigate to your API Development Platform and enter your desired routes. To view the routes, navigate to the relevant files in the routes/api folder (e.g. category-routes.js).
 
 **Please view the below video as an example of how to navigate category routes:**
