@@ -4,7 +4,7 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#licenses)
+- [License](#license)
 - [Contribution](#contribution)
 - [Tests](#test)
 - [Questions](#questions)
@@ -33,11 +33,24 @@ Type /npm run seed' into the terminal to set up the starter tables and database.
 - Then, type 'npm start' to launch the server.
 - Next, navigate to your API Development Platform and enter your desired routes. To view the routes, navigate to the relevant files in the routes/api folder (e.g. category-routes.js).
 
-Please view the below video as an example of how to navigate category routes:
+**Please view the below video as an example of how to navigate category routes:**
 
-Please view the below video as an example of how to navigate product routes:
 
-Please view the below video as an example of how to navigate tag routes:
+https://github.com/p-h-davies/E-Commerce-Back-End/assets/132735727/ce5e0d3d-614b-4ecc-9253-e4f0ab2d9d31
+
+
+**Please view the below video as an example of how to navigate product routes:**
+
+
+https://github.com/p-h-davies/E-Commerce-Back-End/assets/132735727/cec91f9c-a877-4516-902e-ee7c6921c2e4
+
+
+
+**Please view the below video as an example of how to navigate tag routes:**
+
+
+https://github.com/p-h-davies/E-Commerce-Back-End/assets/132735727/bf8709f7-9525-4436-81a3-50a2b99a7bf6
+
 
 ## License:
 The license for this project is: No_License.
